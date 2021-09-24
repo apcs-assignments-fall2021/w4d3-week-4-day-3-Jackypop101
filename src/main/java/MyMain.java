@@ -7,8 +7,13 @@ public class MyMain {
     //     4
     //     2
     public static void printEvensBackwards(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
-        return;
+        for (int i = arr.length-1; i >= 0; i--){
+            if (arr[i]%2 == 0) {
+                System.out.println(arr[i]);
+            }
+            else{
+            }
+        }
     }
 
     // Next, write a method that checks if an array is sorted in
@@ -18,8 +23,22 @@ public class MyMain {
     //     isIncreasing([1, 1, 3, 6, 7]) => false (because 1 is not > 1)
     //     isIncreasing([1, 2, 3, 2, 4, 5, 8]) => false
     public static boolean isIncreasing(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
-        return false;
+        int y = Integer.MIN_VALUE;
+        int w = 0;
+        for (int x: arr){
+            if (y < x){
+                y = x;
+            }
+            else{
+                w = w+1;
+            }
+        }
+        if (w == 0) {
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     // (Maybe Optional):
@@ -30,8 +49,23 @@ public class MyMain {
     //     isBalanced([1, 2, 3, 4, 1, -1]) => true
     //     isBalanced([1, 2, 3, 7, 2, 1]) => false (because 7 - 3 > 2)
     public static boolean isBalanced(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
-        return false;
+        int w = 0;
+        for (int i = 0; i < arr.length; i++){
+            int x = arr[i];
+            int y = arr[arr.length-1-i];
+            if (x <= y + 2 && x >= y -2){
+                w = w;
+            }
+            else{
+                w += 1;
+            }
+        }
+        if (w == 0){
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     // Write a method that takes an array and checks if it contains
@@ -39,8 +73,22 @@ public class MyMain {
     // Ex: containsDuplicates([1, 2, 3, 2, 1]) => true
     //     containsDuplicates([7, 2, 3, 4, 1, 5]) => false
     public static boolean containsDuplicates(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
-        return false;
+        int w = 0;
+        for (int x: arr){
+            for (int z:arr){
+                if (x == z){
+                    w += 1;
+                }
+                else {
+                }
+            }
+        }
+        if (w <= arr.length){
+            return false;
+        }
+        else{
+            return true;
+        }
     }
 
     // Sorting:
@@ -48,7 +96,22 @@ public class MyMain {
     // to sort our code
     // This algorithm returns the sorted array
     public static int[] bubbleSort(int[] arr) {
-        // REPLACE THIS WITH YOUR CODE
+        for (int j = 0; j < arr.length; j++){
+            int tempx = 0;
+            int tempy = 0;
+            for (int i = 0; i < arr.length - 1; i++) {
+                if (i != arr.length - 1) {
+                    tempx = arr[i];
+                    tempy = arr[i+1];
+                    if (arr[i] < arr[i + 1]) {
+                    }
+                    else {
+                        arr[i] = tempy;
+                        arr[i + 1] = tempx;
+                    }
+                }
+            }
+        }
         return arr;
     }
 
